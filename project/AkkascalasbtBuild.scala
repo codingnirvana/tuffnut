@@ -7,17 +7,16 @@ object AkkascalasbtBuild extends Build {
   import Dependencies._
 
   lazy val akkascalasbt = Project(
-    id = "akka-scala-sbt",
+    id = "akka-code-samples",
     base = file("."),
     settings = Project.defaultSettings ++ Seq(
-      name := "akka-scala-sbt",
+      name := "akka-code-samples",
       organization := "indix",
       version := "0.1-SNAPSHOT",
-      scalaVersion := "2.9.2",
+      scalaVersion := "2.10.2",
       resolvers := Seq(sonatypeRepo, typesafeRepo),
       libraryDependencies ++= Seq(
-        akkaActor, akkaRemote, asyncHttp,
-        scalatest, jettyServerTest, akkaTestKit
+        akkaActor, akkaRemote
       )
     )
   )
@@ -28,15 +27,9 @@ object AkkascalasbtBuild extends Build {
   }
 
   object Dependencies {
-    val akkaVersion: String = "2.0.1"
-    val akkaActor = "com.typesafe.akka" % "akka-actor" % akkaVersion
-    val akkaRemote = "com.typesafe.akka" % "akka-remote" % akkaVersion
-    val asyncHttp = "com.ning" % "async-http-client" % "1.7.5"
-
-    val scalatest = "org.scalatest" %% "scalatest" % "1.6.1" % "test"
-    val akkaTestKit = "com.typesafe.akka" % "akka-testkit" % akkaVersion % "test"
-    val jettyVersion = "7.4.0.v20110414"
-    val jettyServerTest = "org.eclipse.jetty" % "jetty-server" % jettyVersion % "test"
+    val akkaVersion: String = "2.2.1"
+    val akkaActor = "com.typesafe.akka" % "akka-actor_2.10" % akkaVersion
+    val akkaRemote = "com.typesafe.akka" % "akka-remote_2.10" % akkaVersion
   }
 
 }
