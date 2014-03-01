@@ -23,7 +23,7 @@ trait Parser {
     val offers = bookBox.map {
       n =>
         val td = n.select("tr td").toList
-        Offer(td(0).select("img").attr("alt"),td(0).select("img").attr("src"), td(1).text(), td(4).select("img").attr("src"))
+        Offer(td(0).select("img").attr("alt"),td(0).select("img").attr("src"), td(1).text(), td(4).select("a").attr("href"))
     }
 
     Results(title , imgUrl, author, minPrice, offers.toList)
