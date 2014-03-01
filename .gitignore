@@ -1,6 +1,4 @@
-project/project/
-project/target
-target
-.idea/workspace.xml
-.idea/*
-.idea_modules/*
+project/project
+target/
+.idea*
+
